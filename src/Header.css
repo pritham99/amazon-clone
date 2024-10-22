@@ -1,0 +1,60 @@
+.header{
+    display: flex;
+    top: 0;
+    align-items: center;    /* Vertically centers the content within the header */
+    padding: 10px;          /* Adds some space around the content */
+    background-color: #232F3E;  /* Background color for the header */
+    height: 60px;           /* Adjust the height of the header */
+    position: sticky;     /* Allows for absolute positioning of elements inside */
+    z-index: 100;
+  }
+  
+  .header_logo {
+    height: 40px; 
+    width: 100px;
+    object-fit: contain;          
+    margin-top: 18px;
+    margin: 0 20px;
+  }
+  .header_search {
+    flex: 1;           /* Allows the search bar to take up available space */
+    display: flex;          /* Allows for easy alignment of search input and icon */
+    align-items: center;
+  }
+  
+  .header_searchInput {
+    height: 12px;
+    width: 100%;            /* Makes the input fill the available space */
+    padding: 10px;          /* Adds padding inside the input field */
+    border: none;           /* Removes the border of the input */
+    border-radius: 5px;     /* Slightly rounds the corners of the input */
+  }
+  .header_searchIcon {
+    padding: 5px;
+    background-color: #cd9042; 
+  }
+  .header_optionOne{
+    font-size: 10px;
+  }
+  .header_optionTwo{
+    font-size: 13px;
+    font-weight: 100px;
+  }
+  .header_nav{
+    display: flex;  
+    justify-content: space-evenly;
+
+  }
+  .header_options{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: aliceblue;
+  }
+.header_optionBasket{
+    display: flex;
+    color: aliceblue;
+    align-items: center;
+}
+  
