@@ -9,7 +9,7 @@ import { useStateValue } from "./StateProvider";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
-  const [{}, dispatch] = useStateValue();
+const [state] = useStateValue(); // or destructure only what's needed
   useEffect(() => {
     // will only run once when the app component loads...
 
@@ -31,7 +31,7 @@ function App() {
         });
       }
     });
-  }, []);
+  }, [dispatch]);
   return (
     //BEM
     <Router>
