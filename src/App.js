@@ -9,16 +9,15 @@ import { useStateValue } from "./StateProvider";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
-const [state] = useStateValue(); // or destructure only what's needed
+  const [, dispatch] = useStateValue(); // ✅ Correctly get dispatch
+
   useEffect(() => {
     // will only run once when the app component loads...
-
-    auth.onAuthStateChanged((authUser) => {
+    const unsubscribe = auth.onAuthStateChanged((authUser) => {
       console.log("THE USER IS >>> ", authUser);
 
       if (authUser) {
-        // the user just logged in / the user was logged in
-
+        // the user just logged in / was logged in
         dispatch({
           type: "SET_USER",
           user: authUser,
@@ -31,9 +30,13 @@ const [state] = useStateValue(); // or destructure only what's needed
         });
       }
     });
+
+    return () => {
+      unsubscribe(); // ✅ cleanup
+    };
   }, [dispatch]);
+
   return (
-    //BEM
     <Router>
       <div className="app">
         <Switch>
